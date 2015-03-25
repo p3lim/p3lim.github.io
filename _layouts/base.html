@@ -1,13 +1,19 @@
----
-
----
-
 <!DOCTYPE html>
 <html>
 	<head>
-		{% include analytics.html %}
+		<meta http-equiv='content-type' content='text/html; charset=utf-8'>
+		<meta http-equiv='content-language' content='en'>
+		<link rel='icon' href='/assets/images/favicon.ico'>
+		<link rel='alternate' href='/feed.xml' type='application/rss+xml'>
+		<title>{{ page.title }}</title>
+
+		{% include stylesheets.html %}
+		{% include scripts.html %}
 	</head>
-	<body>
+	<body {% if page.nav-id %}id='{{ page.nav-id }}'{% endif %}>
+		<header>
+			{% include header.html %}
+		</header>
 		{{ content }}
 	</body>
 </html>

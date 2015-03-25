@@ -1,5 +1,16 @@
 ---
 layout: base
+nav-id: home
 ---
-
-<h1>Nothing to see here</h1>
+{% for post in site.posts %}
+<article>
+	<header>
+		<p class='meta'>{{ post.date | date_to_string | replace:' ','<br>' }}</p>
+		<h1>
+			<a class='title' href='{{ post.url }}'>{{ post.title }}</a>
+		</h1>
+	</header>
+	{{ post.excerpt }}
+	<a class='readmore' href='{{ post.url }}'>Read more</a>
+</article>
+{% endfor %}

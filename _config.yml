@@ -1,1 +1,3 @@
 title: p3lim.net
+permalink: /post/:year/:month/:day/:title
+excerpt_separator: <!--more-->
