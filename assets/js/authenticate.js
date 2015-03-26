@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	}
 
 	var storedCode = localStorage.getItem('code');
-	if(code){
+	if(storedCode){
 		localStorage.removeItem('code');
 		location.hash = 'comments';
 
