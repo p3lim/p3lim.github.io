@@ -10,6 +10,6 @@ Another reason would be to exercise my writing. English is not my native languag
 
 I will probably post about anything technology-related that interests me, like programming, hardware or even games, who knows, but for the time being, I will continue working on this little platform of mine.
 
-I will probably post some more in the next few days or weeks about things I am currently working on/with, like [GitHub Pages](https://pages.github.com/) powered by [Jekyll](http://jekyllrb.com/) (this website), and I will most likely do a writeup on the keyboard I recently built!
+I will probably post some more in the next few days or weeks about things I am currently working on/with, like [GitHub Pages](//pages.github.com/) powered by [Jekyll](http://jekyllrb.com/) (this website), and I will most likely do a writeup on the keyboard I recently built!
 
 We'll see.

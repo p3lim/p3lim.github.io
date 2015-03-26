@@ -5,12 +5,12 @@
 	<channel>
 		<title>p3lim.net</title>
 		<description>RSS Feed</description>
-		<link>http://p3lim.net/</link>
+		<link>{{ site.url }}</link>
 
 		{% for post in site.posts %}
 		<item>
 			<title>{{ post.title }}</title>
-			<link>http://p3lim.net{{ post.url }}</link>
+			<link>{{ site.url }}{{ post.url }}</link>
 			<pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
 			<description>{{ post.excerpt | xml_escape }}</description>
 		</item>
