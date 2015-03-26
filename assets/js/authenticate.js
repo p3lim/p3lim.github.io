@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	if(match){
 		var savedState = localStorage.getItem('state');
 		if(savedState && savedState === state){
-			localStorage.removeItem('state');
 			localStorage.setItem('code', code);
 			location.href = location.href.split('?')[0];
 		}
@@ -73,4 +72,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	authURL += 'authorize?client_id={0}&scope={1}&state={2}&redirect_uri={3}';
 	authAnchor.style.display = 'block'
 	authAnchor.children[0].addEventListener('click', onAuthClick);
+
+	localStorage.removeItem('state');
 });
