@@ -1,8 +1,9 @@
 ---
 ---
-@import 'fonts';
 @import 'colors';
-@import 'octicons';
+
+$font-normal: benton-sans, helvetica, arial, sans-serif;
+$font-code: courier, monospace;
 
 * {
 	margin: 0;

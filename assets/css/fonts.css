@@ -24,6 +24,3 @@
 		url('/assets/fonts/bentonsans-medium.woff') format('woff'),
 		url('/assets/fonts/bentonsans-medium.ttf') format('truetype');
 }
-
-$font-normal: benton-sans, helvetica, arial, sans-serif;
-$font-code: courier, monospace;
