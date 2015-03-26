@@ -202,18 +202,18 @@ article {
 		max-width: 560px;
 		max-height: 480px;
 	}
-}
 
-article header .meta {
-	font-weight: bold;
-	position: absolute;
-	left: -20px;
-	top: 8px;
-	width: 40px;
-	background: $color-white;
-	padding: 10px 0 16px;
-	text-transform: uppercase;
-	text-align: center;
-	font-size: 11px;
-	color: $color-dark;
+	header .meta {
+		font-weight: bold;
+		position: absolute;
+		left: -20px;
+		top: 8px;
+		width: 40px;
+		background: $color-white;
+		padding: 10px 0 16px;
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 11px;
+		color: $color-dark;
+	}
 }
