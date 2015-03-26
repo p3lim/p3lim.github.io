@@ -24,7 +24,7 @@ var xhr = function(method, path, callback, headers, data){
 			callback(this, this.status !== 200);
 	}
 
-	xhr.send(data);
+	req.send(data);
 }
 
 function get(path, callback, headers){
