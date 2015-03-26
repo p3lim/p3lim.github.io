@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function(){
 		return;
 	}
 
-	var match, code, state = location.search.match(/^\?code=(.+)&state=(.+)/);
+	var match = location.search.match(/^\?code=(.+)&state=(.+)/);
 	if(match){
 		var savedState = localStorage.getItem('state');
-		if(savedState && savedState === state){
-			localStorage.setItem('code', code);
+		if(savedState && savedState === match[2]){
+			localStorage.setItem('code', match[1]);
 			location.href = location.href.split('?')[0];
 		}
 	}
