@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', function(){
 			location.href = location.href.split('?')[0];
 		}
 	}
-
+/*
 	authURL += 'authorize?client_id={0}&scope={1}&state={2}&redirect_uri={3}';
 	authAnchor.style.display = 'block'
 	authAnchor.children[0].addEventListener('click', onAuthClick);
-
+*/
 	localStorage.removeItem('state');
 });
