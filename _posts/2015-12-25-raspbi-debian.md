@@ -10,7 +10,7 @@ This is the first post in (hopefully) a series that'll cover what is possible to
 
 ### Intentions
 
-When I first got the Raspberry Pi in the mail I had planned to host a simple TeamSpeak server on it, and nothing more. Sadly, the first thing I found out when I got it was that TeamSpeak doesn't have a version for ARM processors (which the Raspberry Pi is equipped with), so it just sat in its box for a few weeks doing nothing but collecting dust, being forgotten.
+When I first got the [Raspberry Pi](https://www.raspberrypi.org/help/what-is-a-raspberry-pi/) in the mail I had planned to host a simple TeamSpeak server on it, and nothing more. Sadly, the first thing I found out when I got it was that TeamSpeak doesn't have a version for ARM processors (which the Raspberry Pi is equipped with), so it just sat in its box for a few weeks doing nothing but collecting dust, being forgotten.
 
 A few weeks later I decided to play around with the possibilities of this device again, but I first had to set it up properly, and while doing so, doing a writeup of the process for future reference (and possibly others in the same position).
 
@@ -18,7 +18,7 @@ A few weeks later I decided to play around with the possibilities of this device
 
 As far hardware goes, it's best to have a list of all the parts required, and what I'll be using for the purpose of these posts.
 
-- [Raspberry Pi 2 Model B+]()
+- [Raspberry Pi 2 Model B+](https://www.raspberrypi.org/products/model-b-plus/)
 - MicroSD card (4GB should suffice, but the more the merrier)
 - Micro USB cable
 - Ethernet cable (CAT5 or better)
