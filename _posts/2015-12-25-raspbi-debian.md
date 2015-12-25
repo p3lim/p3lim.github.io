@@ -47,11 +47,11 @@ As a last step we want to have the installer apply some additional settings and 
 
 Create a new text file `installer-config.txt` inside the MicroSD card, and paste the contents below into it:
 
-```
+{% highlight yaml %}
 release=jessie
 packages=cpufrequtils,raspi-copies-and-fills,rng-tools,nano
 hostname=raspi
-```
+{% endhighlight %}
 
 You can tweak these to your liking, full details and a list of defaults can be found in the [raspbian-ua-netinst project's readme](https://github.com/debian-pi/raspbian-ua-netinst#installer-customization).
 
