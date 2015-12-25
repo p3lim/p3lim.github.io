@@ -39,7 +39,7 @@ I'm using Windows for the purposes of this post, so the process might vary depen
 
 You'll also need a tool to format the MicroSD card, for this I recommend [Rufus](http://rufus.akeo.ie/), a simple and free tool that'll do the job.
 
-Open up Rufus, select the MicroSD card, select FAT32 as the file system and make sure the "Create a bootable disk.." is unchecked, like shown below. Hit the "Start" button on the bottom and you're ready for the next step.
+Open up Rufus, select the MicroSD card, select FAT32 as the file system and make sure the "Create a bootable disk.." is unchecked. Hit the "Start" button on the bottom and you're ready for the next step.
 
 Once the Raspbian file has finished downloading, extract the contents of it directly into the freshly formatted MicroSD card.
 
