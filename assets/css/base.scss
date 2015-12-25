@@ -188,6 +188,11 @@ article {
 	pre {
 		background-color: $color-border;
 		padding: 5px 20px;
+		margin-bottom: 20px;
+
+		code:before, code:after {
+			content: '';
+		}
 	}
 
 	code {
