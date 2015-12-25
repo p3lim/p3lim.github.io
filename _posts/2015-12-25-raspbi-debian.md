@@ -98,11 +98,11 @@ Type `dpkg-reconfigure tzdata` and you'll be prompted with a similar daemon, thi
 Optional: Add the hardware random number generator. You decide if you want this or not, but it improves the performance of various applications that need random numbers significantly.  
 Copy/paste the following command (<kbd>Ctrl+Shift+V</kbd> in *Secure Shell* by the way) `echo 'bcm2708-rng' >> /etc/modules`.
 
-Lastly you'll want to add a new user, using root is not a good thing as it's an elevated user that has access to anything on the system.  
-Type `adduser pi` (name it anything you want really), and follow the prompts.  
+Lastly you'll want to add a new user, using root is not a good thing as it's an elevated user that has access to anything on the system. Type `adduser pi` (name it anything you want really), and follow the prompts.  
 Lastly we'll want to give that user some privileges, such as accessing elevation to execute off-limit commands through "sudo": `adduser pi sudo`.
 
 And for good measure, restart the Pi: `sudo reboot`.
 
-And that's it, you now have a Raspberry Pi running the latest version of Raspbian, ready for your every need.  
+And that's it, you now have a Raspberry Pi running the latest version of Raspbian, ready for your every need.
+
 I'll cover some examples of what you can use the Pi for in the following posts.

@@ -87,7 +87,6 @@ body#contact nav a.contact:after {
 
 a {
 	color: $color-purple;
-	text-decoration: none;
 
 	&:hover, &:focus {
 		color: $color-purple-dark;
@@ -150,12 +149,12 @@ article {
 	}
 
 	p {
-		margin: 0 0 10px;
+		margin: 0 0 20px;
 	}
 
 	ul, ol {
 		margin-top: 0;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 
 	ul ul, ul ol, ol ul, ol ol {
@@ -176,7 +175,7 @@ article {
 	kbd {
 		font-family: $font-code;
 		font-size: 11px;
-		padding: 3px 5px;
+		padding: 1px 4px;
 		margin: 0 2px;
 		vertical-align: middle;
 		border: 1px solid $color-border-dark;
@@ -186,12 +185,16 @@ article {
 		white-space: nowrap;
 	}
 
+	pre {
+		background-color: $color-border;
+		padding: 5px 20px;
+	}
+
 	code {
 		font-family: $font-code;
 		font-size: 12px;
 		background-color: $color-border;
 		border-radius: 2px;
-		white-space: nowrap;
 
 		&:before, &:after {
 			letter-spacing: -0.2em;
