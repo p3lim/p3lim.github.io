@@ -10,7 +10,7 @@ This is the first post in (hopefully) a series that'll cover what is possible to
 
 ### Intentions
 
-When I first got the [Raspberry Pi](https://www.raspberrypi.org/help/what-is-a-raspberry-pi/) in the mail I had planned to host a simple TeamSpeak server on it, and nothing more. Sadly, the first thing I found out when I got it was that TeamSpeak doesn't have a version for ARM processors (which the Raspberry Pi is equipped with), so it just sat in its box for a few weeks doing nothing but collecting dust, being forgotten.
+When I first got the [Raspberry Pi](//www.raspberrypi.org/help/what-is-a-raspberry-pi/) in the mail I had planned to host a simple TeamSpeak server on it, and nothing more. Sadly, the first thing I found out when I got it was that TeamSpeak doesn't have a version for ARM processors (which the Raspberry Pi is equipped with), so it just sat in its box for a few weeks doing nothing but collecting dust, being forgotten.
 
 A few weeks later I decided to play around with the possibilities of this device again, but I first had to set it up properly, and while doing so, doing a writeup of the process for future reference (and possibly others in the same position).
 
@@ -18,7 +18,7 @@ A few weeks later I decided to play around with the possibilities of this device
 
 As far hardware goes, it's best to have a list of all the parts required, and what I'll be using for the purpose of these posts.
 
-- [Raspberry Pi 2 Model B+](https://www.raspberrypi.org/products/model-b-plus/)
+- [Raspberry Pi 2 Model B+](//www.raspberrypi.org/products/model-b-plus/)
 - MicroSD card (4GB should suffice, but the more the merrier)
 - Micro USB cable
 - Ethernet cable (CAT5 or better)
@@ -29,15 +29,15 @@ Further in this series I will add on to this, but this is the bare requirements 
 
 ### The Operating System
 
-At the core of every computer there is the OS, there are many a flavor to choose from, but I chose [Raspbian](http://www.raspbian.org/), a modified version of [Debian](https://www.debian.org/) that is tailored for the Raspberry Pi.
+At the core of every computer there is the OS, there are many a flavor to choose from, but I chose [Raspbian](//www.raspbian.org/), a modified version of [Debian](//www.debian.org/) that is tailored for the Raspberry Pi.
 
-And since one might not have that much storage available on the Pi, I chose to get the [unattended netinstaller](https://github.com/debian-pi/raspbian-ua-netinst) version of it, which allows me to easily make a customized and small installation of Raspbian, only containing what I felt necessary.
+And since one might not have that much storage available on the Pi, I chose to get the [unattended netinstaller](//github.com/debian-pi/raspbian-ua-netinst) version of it, which allows me to easily make a customized and small installation of Raspbian, only containing what I felt necessary.
 
-To prepare the MicroSD card, insert it into your computer and download the [lastest release](https://github.com/debian-pi/raspbian-ua-netinst/releases/latest) zip file of Raspbian, which at the time of this writing is v1.0.8.1.
+To prepare the MicroSD card, insert it into your computer and download the [lastest release](//github.com/debian-pi/raspbian-ua-netinst/releases/latest) zip file of Raspbian, which at the time of this writing is v1.0.8.1.
 
 I'm using Windows for the purposes of this post, so the process might vary depending on your system.
 
-You'll also need a tool to format the MicroSD card, for this I recommend [Rufus](http://rufus.akeo.ie/), a simple and free tool that'll do the job.
+You'll also need a tool to format the MicroSD card, for this I recommend [Rufus](//rufus.akeo.ie/), a simple and free tool that'll do the job.
 
 Open up Rufus, select the MicroSD card, select FAT32 as the file system and make sure the "Create a bootable disk.." is unchecked. Hit the "Start" button on the bottom and you're ready for the next step.
 
@@ -53,7 +53,7 @@ packages=cpufrequtils,raspi-copies-and-fills,rng-tools,nano
 hostname=raspi
 {% endhighlight %}
 
-You can tweak these to your liking, full details and a list of defaults can be found in the [raspbian-ua-netinst project's readme](https://github.com/debian-pi/raspbian-ua-netinst#installer-customization).
+You can tweak these to your liking, full details and a list of defaults can be found in the [raspbian-ua-netinst project's readme](//github.com/debian-pi/raspbian-ua-netinst#installer-customization).
 
 Once done, eject the MicroSD card from your computer and continue to plug everything together.
 
@@ -78,7 +78,7 @@ The system is almost completely unconfigured on the first boot, we'll go over so
 First off you'll have to find out what local IP the Pi was assigned, you can find out by checking with your router's settings, and I won't cover this here, as it varies a lot from router to router.  
 While you're there, it's best if you set the IP as a static one, that way it's always the same.
 
-Once you've found out, let's connect to it over SSH! If you don't have a client there is an excellent app for [Chrome](https://www.google.com/chrome/browser/) that will do nicely, you can find it on the [webstore](https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo), and we'll use this in this series.
+Once you've found out, let's connect to it over SSH! If you don't have a client there is an excellent app for [Chrome](//www.google.com/chrome/browser/) that will do nicely, you can find it on the [webstore](//chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo), and we'll use this in this series.
 
 Start *Secure Shell* and fill in the following:
 
