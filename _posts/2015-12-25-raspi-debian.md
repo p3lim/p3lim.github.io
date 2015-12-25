@@ -3,7 +3,7 @@ layout: post
 title: Setting up a Raspberry Pi
 tags: raspi
 ---
-In the attempt to rid my computer of all software and services that would require it to run 24/7, I've decided to offload most of the stuff I need to have running onto a better platform.
+In the attempt to rid my computer of all software and services that would require it to run 24/7, I've decided to offload most of the stuff that would need to run all the time onto a better platform.
 
 This is the first post in (hopefully) a series that'll cover what is possible to do with the Raspberry Pi, starting off by getting the device ready.
 <!--more-->
@@ -33,15 +33,15 @@ At the core of every computer there is the OS, there are many a flavor to choose
 
 And since one might not have that much storage available on the Pi, I chose to get the [unattended netinstaller](//github.com/debian-pi/raspbian-ua-netinst) version of it, which allows me to easily make a customized and small installation of Raspbian, only containing what I felt necessary.
 
-To prepare the MicroSD card, insert it into your computer and download the [lastest release](//github.com/debian-pi/raspbian-ua-netinst/releases/latest) zip file of Raspbian, which at the time of this writing is v1.0.8.1.
+You'll also need a tool to format the MicroSD card, for this I recommend [Rufus](//rufus.akeo.ie/), a simple and free tool that'll do the job. This is only available on Windows, so if you're running Linux or OSX you'll have to find a tool yourself that allow you to partition and format external drives.
 
-I'm using Windows for the purposes of this post, so the process might vary depending on your system.
+First off, insert the MicroSD card into your computer, this is what will host the OS for the Pi, and is the sole storage available to it.
 
-You'll also need a tool to format the MicroSD card, for this I recommend [Rufus](//rufus.akeo.ie/), a simple and free tool that'll do the job.
+Next you'll need to download the [lastest release](//github.com/debian-pi/raspbian-ua-netinst/releases/latest) **zip** file of Raspbian, which at the time of this writing is v1.0.8.1.
 
-Open up Rufus, select the MicroSD card, select FAT32 as the file system and make sure the "Create a bootable disk.." is unchecked. Hit the "Start" button on the bottom and you're ready for the next step.
+While that is downloading (shouldn't take long) we'll format the MicroSD card. Open up Rufus, select the MicroSD card from the list, select FAT32 as the file system and make sure the "Create a bootable disk.." is unchecked. Once you're ready hit the "Start" button on the bottom and wait for it to finish.
 
-Once the Raspbian file has finished downloading, extract the contents of it directly into the freshly formatted MicroSD card.
+Once the formatting is done and the download of Raspbian is finished, extract the contents of the zip file directly onto the MicroSD card.
 
 As a last step we want to have the installer apply some additional settings and packages, which we can do with a simple config file.
 
@@ -55,7 +55,7 @@ hostname=raspi
 
 You can tweak these to your liking, full details and a list of defaults can be found in the [raspbian-ua-netinst project's readme](//github.com/debian-pi/raspbian-ua-netinst#installer-customization).
 
-Once done, eject the MicroSD card from your computer and continue to plug everything together.
+Once done, eject the MicroSD card from your computer.
 
 ### Connecting All The Things!
 
@@ -63,9 +63,9 @@ This part is simple, and I don't why it required a writeup, but what the heck.
 
 1. Insert the MicroSD card into the Raspberry Pi.
 2. Connect the Raspberry Pi to your router/switch using an ethernet cable.
-3. Optionally, connect your Raspberry Pi to a monitor over HDMI.
+3. Optionally, connect your Raspberry Pi to a monitor over HDMI during installation.
 	- *This is recommended, as it is otherwise hard to tell when the installation is done.*
-4. Connect the Raspberry Pi to any USB-powering device.
+4. Connect the Raspberry Pi to any 5V USB-powering device.
 	- *Anything will suffice, a cellphone USB charger unit, your computer, even routers tend to have an USB port.*
 
 When powered up, the installation of Raspbian will start automatically, and will take some time (15-25 minutes depending on your internet connection).
@@ -75,16 +75,16 @@ If you've connected a monitor you'll know when it's done, as you'll be greeted w
 
 The system is almost completely unconfigured on the first boot, we'll go over some of the things you'll want to do first.
 
-First off you'll have to find out what local IP the Pi was assigned, you can find out by checking with your router's settings, and I won't cover this here, as it varies a lot from router to router.  
-While you're there, it's best if you set the IP as a static one, that way it's always the same.
+First off you'll have to find out what local IP address the Pi was assigned, you can find out by checking with your router's settings, and I won't cover this here, as it varies a lot from router to router.  
+While you're there, it's best if you assign an IP address to it manually instead of having [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) lease one to it for a limited time. Trust me, you'll thank me later.
 
-Once you've found out, let's connect to it over SSH! If you don't have a client there is an excellent app for [Chrome](//www.google.com/chrome/browser/) that will do nicely, you can find it on the [webstore](//chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo), and we'll use this in this series.
+Once you've gotten the local IP address, let's connect to it over SSH! If you don't have a client there is an excellent app for [Chrome](//www.google.com/chrome/browser/) called *Secure Shell* that'll do nicely, you can find it on the [webstore](//chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo), and we'll be using it in this series.
 
-Start *Secure Shell* and fill in the following:
+Start *Secure Shell* and fill in the following fields:
 
-- `username` (`root`)
-- `hostname` (the IP address assigned to the Pi)
-- `port` (`22` is default for SSH)
+- username (`root`)
+- hostname (the IP address assigned to the Pi)
+- port (`22` is default for SSH)
 
 And then you just hit Connect (or <kbd>Enter</kbd>). You'll be prompted for a password, the default is `raspbian`.
 
@@ -95,11 +95,11 @@ Type `dpkg-reconfigure locales` and you'll be prompted with a daemon that allows
 
 Type `dpkg-reconfigure tzdata` and you'll be prompted with a similar daemon, this time for your timezone. It's the same procedure basically.
 
-Optional: Add the hardware random number generator. You decide if you want this or not, but it improves the performance of various applications that need random numbers significantly.  
+Optional: Add a hardware random number generator. You decide if you want this or not, but it improves the performance of various applications that need random numbers significantly.  
 Copy/paste the following command (<kbd>Ctrl+Shift+V</kbd> in *Secure Shell* by the way) `echo 'bcm2708-rng' >> /etc/modules`.
 
-Lastly you'll want to add a new user, using root is not a good thing as it's an elevated user that has access to anything on the system. This is the user that you'll normally use when connecting to the Pi over SSH. Type `adduser pi` (name it anything you want really), and follow the prompts.  
-Lastly we'll want to give that user some privileges, such as accessing elevation to execute off-limit commands through "sudo": `adduser pi sudo`.
+Lastly you'll want to add a new user, using *root* is not a good thing as it has access to anything and everything on the system. This is the user that you'll normally use when connecting to the Pi over SSH.
+Type `adduser pi` (name it anything you want really), and follow the prompts. We also want to allow this user some privileges, such as becoming elevated to execute administrative commands through "sudo", so that you don't have to log into *root* every time: `adduser pi sudo`.  
 
 And for good measure, restart the Pi: `reboot`.
 
