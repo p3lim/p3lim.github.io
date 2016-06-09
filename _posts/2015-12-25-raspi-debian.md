@@ -88,7 +88,7 @@ Start *Secure Shell* and fill in the following fields:
 
 And then you just hit Connect (or <kbd>Enter</kbd>). You'll be prompted for a password, the default is `raspbian`.
 
-First things first; change that password. Type `passwd` and enter in the old password, followed by your new password (twice).
+First things first; change that password. Type `passwd` and enter in a new password (twice).
 
 You'll then want to configure your default locale and timezone.  
 Type `dpkg-reconfigure locales` and you'll be prompted with a daemon that allows you to select your locale. Use the arrow keys to navigate up and down, hit <kbd>Space</kbd> to select your locale (select the UTF-8 version of it preferably), then hit <kbd>Enter</kbd>. Select it as the default locale for the system in the next prompt, and you're done.
