@@ -99,7 +99,8 @@ Optional: Add a hardware random number generator. You decide if you want this or
 Copy/paste the following command (<kbd>Ctrl+Shift+V</kbd> in *Secure Shell* by the way) `echo 'bcm2708-rng' >> /etc/modules`.
 
 Lastly you'll want to add a new user, using *root* is not a good thing as it has access to anything and everything on the system. This is the user that you'll normally use when connecting to the Pi over SSH.
-Type `adduser pi` (name it anything you want really), and follow the prompts. We also want to allow this user some privileges, such as becoming elevated to execute administrative commands through "sudo", so that you don't have to log into *root* every time: `adduser pi sudo`.  
+Type `adduser pi` (name it anything you want really), and follow the prompts.  
+We also want to allow this user some privileges, such as becoming elevated to execute administrative commands through "sudo", so that you don't have to log into *root* every time: `adduser pi sudo`.  
 To be able to _use_ sudo, you also need to install it: `apt-get install sudo`.
 
 And for good measure, restart the Pi: `reboot`.
