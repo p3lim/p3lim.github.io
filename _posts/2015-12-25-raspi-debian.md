@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting up a Raspberry Pi
-tags: raspi
+tags: raspi,linux
 ---
 In the attempt to rid my computer of all software and services that would require it to run 24/7, I've decided to offload most of the stuff that would need to run all the time onto a better platform.
 
@@ -100,9 +100,8 @@ Copy/paste the following command (<kbd>Ctrl+Shift+V</kbd> in *Secure Shell* by t
 
 Lastly you'll want to add a new user, using *root* is not a good thing as it has access to anything and everything on the system. This is the user that you'll normally use when connecting to the Pi over SSH.
 Type `adduser pi` (name it anything you want really), and follow the prompts. We also want to allow this user some privileges, such as becoming elevated to execute administrative commands through "sudo", so that you don't have to log into *root* every time: `adduser pi sudo`.  
+To be able to _use_ sudo, you also need to install it: `apt-get install sudo`.
 
 And for good measure, restart the Pi: `reboot`.
 
 And that's it, you now have a Raspberry Pi running the latest version of Raspbian, ready for your every need.
-
-I'll cover some examples of what you can use the Pi for in the following posts.
