@@ -1,0 +1,26 @@
+---
+layout: base
+---
+
+{% for post in site.posts %}
+	{% assign year = post.date | date: '%Y' %}
+	{% assign next = post.next.date | date: '%Y' %}
+
+	{% if year != next %}
+		{% unless forloop.first %}
+			</ol>
+		{% endunless %}
+
+		<h5>{{ year }}</h5>
+		<ol>
+	{% endif %}
+
+	<li>
+		<date>{{ post.date | date: '%-d %b' }}</date>
+		<div><a href='{{ post.url }}'>{{ post.title }}</a></div>
+	</li>
+
+	{% if forloop.last %}
+		</ol>
+	{% endif %}
+{% endfor %}
