@@ -6,10 +6,14 @@ body {
 	max-width: 800px;
 
 	&[data-path='/'] {
-		max-width: 500px;
+		max-width: 600px;
 
 		ul {
 			margin-left: 5px;
+		}
+
+		li {
+			margin-bottom: 0;
 		}
 	}
 
@@ -98,6 +102,10 @@ article {
 
 	ol ul {
 		margin: 8px 0 0 30px;
+	}
+
+	li {
+		margin-bottom: 0;
 	}
 }
 
