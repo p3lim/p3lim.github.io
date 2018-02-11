@@ -4,7 +4,7 @@ layout: base
 
 #### About
 
-My name is Adrian L Lange, and this is my humble home on the internet.
+My name is Adrian L Lange, welcome to my humble home on the internet.
 
 I'm currently studying Information Security at [NTNU](//ntnu.edu/studies/bitsec), and I'm most commonly known for [creating add-ons](//github.com/p3lim-wow) for World of Warcraft.
 
