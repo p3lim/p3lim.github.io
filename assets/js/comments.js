@@ -54,7 +54,13 @@ function handler(){
 		section.appendChild(box);
 	}
 
-	section.append(`<div class='gfm'><a href='https://github.com/${nwo}/commit/${sha}#comments'>Leave a comment on GitHub</a></div>`);
+	let link = document.createElement('a');
+	link.innerText = 'Leave a comment on GitHub';
+	link.href = `https://github.com/${nwo}/commit/${sha}#comments`;
+	let box = document.createElement('div');
+	box.classList.add('gfm');
+	box.appendChild(link);
+	section.appendChild(box);
 }
 
 let xhr = new XMLHttpRequest();
