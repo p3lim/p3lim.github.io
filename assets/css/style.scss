@@ -109,6 +109,103 @@ article {
 	}
 }
 
+#comments {
+	// basically ripping off GitHub's stylesheet for comments
+	font: normal normal 14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	width: 780px;
+
+	& > div {
+		padding-left: 60px;
+		margin-bottom: 15px;
+	}
+
+	.avatar {
+		float: left;
+		margin-left: -60px;
+
+		img {
+			width: 44px;
+			height: 44px;
+			border-radius: 3px;
+		}
+	}
+
+	.comment {
+		position: relative;
+		border: 1px solid #d1d5da;
+		border-radius: 3px;
+
+		&::before, &::after {
+			position: absolute;
+			top: 11px;
+			left: -16px;
+			content: " ";
+			border-color: transparent;
+			border-style: solid solid outset;
+			border-width: 8px;
+			border-right-color: #d1d5da;
+		}
+
+		&::after {
+			margin-top: 1px;
+			margin-left: 2px;
+			border-width: 7px;
+			border-right-color: #f7f8fa;
+		}
+
+		.header {
+			background-color: #f7f8fa;
+			border-bottom: 1px solid #d1d5da;
+			padding: 0 15px;
+
+			h3 {
+				padding: 10px 0;
+				margin-bottom: 0;
+
+				font-size: 14px;
+				font-weight: 400;
+				letter-spacing: 0.01em;
+
+				strong {
+					font-weight: 600;
+				}
+			}
+
+			a {
+				color: inherit;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.body {
+			padding: 15px;
+			font-size: 14px;
+		}
+	}
+
+	& > div.author {
+		.header {
+			background-color: #f1f8ff;
+			border-bottom-color: #c0d3eb;
+		}
+
+		.comment {
+			border-color: #c0d3eb;
+		}
+
+		.comment::before {
+			border-right-color: #c0d3eb;
+		}
+
+		.comment::after {
+			border-right-color: #f1f8ff;
+		}
+	}
+}
+
 // AnchorJS
 .anchorjs-link {
 	background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjBweCcgaGVpZ2h0PScxMHB4JyB2aWV3Qm94PScwIDAgMjAgMTAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGcgZmlsbD0nIzliNGRjYSc+PHBhdGggZD0nTTE1LDAgTDEyLjMwNDY4NzUsMCBDMTMuMjQyMTg3NSwwLjYyNSAxNC4xMjEwOTM4LDEuNzM4MjgxMjUgMTQuMzk0NTMxMiwyLjUgTDE0Ljk4MDQ2ODgsMi41IEMxNi4yNSwyLjUgMTcuNDgwNDY4OCwzLjc1IDE3LjQ4MDQ2ODgsNSBDMTcuNDgwNDY4OCw2LjI1IDE2LjIxMDkzNzUsNy41IDE0Ljk4MDQ2ODgsNy41IEwxMS4yMzA0Njg4LDcuNSBDMTAsNy41IDguNzMwNDY4NzUsNi4yNSA4LjczMDQ2ODc1LDUgQzguNzMwNDY4NzUsNC41NTA3ODEyNSA4Ljg2NzE4NzUsNC4xMjEwOTM3NSA5LjA4MjAzMTI1LDMuNzUgTDYuNDA2MjUsMy43NSBDNi4zMDg1OTM3NSw0LjE2MDE1NjI1IDYuMjUsNC41NzAzMTI1IDYuMjUsNSBDNi4yNSw3LjUgOC43MzA0Njg3NSwxMCAxMS4yMzA0Njg4LDEwIEwxNSwxMCBDMTcuNSwxMCAyMCw3LjUgMjAsNSBDMjAsMi41IDE3LjUsMCAxNSwwIEwxNSwwIFogTTUuNjA1NDY4NzUsNy41IEw1LjAxOTUzMTI1LDcuNSBDMy43NSw3LjUgMi41MTk1MzEyNSw2LjI1IDIuNTE5NTMxMjUsNSBDMi41MTk1MzEyNSwzLjc1IDMuNzg5MDYyNSwyLjUgNS4wMTk1MzEyNSwyLjUgTDguNzY5NTMxMjUsMi41IEMxMCwyLjUgMTEuMjY5NTMxMiwzLjc1IDExLjI2OTUzMTIsNSBDMTEuMjY5NTMxMiw1LjQ0OTIxODc1IDExLjEzMjgxMjUsNS44Nzg5MDYyNSAxMC45MTc5Njg4LDYuMjUgTDEzLjU5Mzc1LDYuMjUgQzEzLjY5MTQwNjIsNS44Mzk4NDM3NSAxMy43NSw1LjQyOTY4NzUgMTMuNzUsNSBDMTMuNzUsMi41IDExLjI2OTUzMTIsMCA4Ljc2OTUzMTI1LDAgTDUsMCBDMi41LDAgMCwyLjUgMCw1IEMwLDcuNSAyLjUsMTAgNSwxMCBMNy42OTUzMTI1LDEwIEM2Ljc1NzgxMjUsOS4zNzUgNS44Nzg5MDYyNSw4LjI2MTcxODc1IDUuNjA1NDY4NzUsNy41IEw1LjYwNTQ2ODc1LDcuNSBaJz48L3BhdGg+PC9nPjwvc3ZnPg==') no-repeat;

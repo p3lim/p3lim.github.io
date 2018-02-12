@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<article>
+<article data-nwo='{{ site.github.repository_nwo }}' data-sha='{{ page.sha }}'>
 	<header>
 		<h1>{{ page.title }}</h1>
 		<date>{{ page.date | date_to_string }}</date>
@@ -14,3 +14,8 @@ layout: base
 
 <script src='/assets/js/anchor.min.js'></script>
 <script src='/assets/js/anchor.js'></script>
+{% if page.sha %}
+<script src='/assets/js/moment.min.js'></script>
+<script src='/assets/js/marked.min.js'></script>
+<script src='/assets/js/comments.js' async></script>
+{% endif %}
