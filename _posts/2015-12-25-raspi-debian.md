@@ -2,11 +2,11 @@
 layout: post
 title: Setting up a Raspberry Pi
 tags: raspi,linux
+sha: 2d878d1ab9d48d33c54abb9c23c4804eb94c2817
 ---
 In the attempt to rid my computer of all software and services that would require it to run 24/7, I've decided to offload most of the stuff that would need to run all the time onto a better platform.
 
 This is the first post in (hopefully) a series that'll cover what is possible to do with the Raspberry Pi, starting off by getting the device ready.
-<!--more-->
 
 ### Intentions
 
