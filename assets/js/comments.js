@@ -4,6 +4,7 @@ const sha = article.getAttribute('data-sha'); // page.sha (custom front-matter)
 
 let section = document.createElement('section');
 section.id = 'comments';
+section.appendChild(document.createElement('hr'));
 article.appendChild(section);
 
 const TEMPLATE = `
