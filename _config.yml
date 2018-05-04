@@ -2,3 +2,4 @@ url: https://p3lim.net
 enforce_ssl: p3lim.net
 title: p3lim.net
 permalink: /:year/:month/:day/:title
+highlighter: rouge
