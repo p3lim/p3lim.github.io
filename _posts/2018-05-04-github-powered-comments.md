@@ -37,12 +37,12 @@ Here we'll want to add the metadata from Jekyll, so we can reach it with JavaScr
 ```html
 <article data-nwo='{{ "{{ site.github.repository_nwo " }}}}' data-sha='{{ "{{ page.sha " }}}}'>
 ```
-`site.github.repository_nwo` is basically `username/repository` for the website repository on GitHub, in my example it's `p3lim/p3lim.github.io`. `page.sha` is custom frontmatter we place in the top of the posts we want to enable comments on, which represents the commit for the post, added like so:
+`site.github.repository_nwo` is basically `username/repository` for the website repository on GitHub, in my example it's `{{ site.github.repository_nwo }}`. `page.sha` is custom frontmatter we place in the top of the posts we want to enable comments on, which represents the commit for the post, added like so:
 ```
 ---
 layout: post
 title: GitHub Powered Comments
-sha: 43eca2893479069b5f561af9847061a42d396342
+sha: {{ page.sha }}
 ---
 ```
 
