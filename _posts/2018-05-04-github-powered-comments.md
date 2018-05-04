@@ -149,7 +149,8 @@ let template = data => {
 };
 ```
 
-Aaaaand... we're done! Well, pretty much. This is just the essence of it. In addition to the above code, I've added (relative) timestamps using the [Moment.js](https://momentjs.com/) library, as well parsed the comment body using [Marked.js](https://marked.js.org/) (which supports GitHub Flavored Markdown!).  
+Aaaaand... we're done! Well, pretty much.  
+This is just the essence of it. In addition to the above code, I've added (relative) timestamps using the [Moment.js](https://momentjs.com/) library, as well parsed the comment body using [Marked.js](https://marked.js.org/) (which supports GitHub Flavored Markdown!).  
 I've also added error handling, and some stylesheets to make it look pretty.
 
 Here's links to the relevant files in all their glory:  
