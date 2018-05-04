@@ -107,7 +107,7 @@ let handleComments = function(){
 		// All of the data for the comments lies in the response data, so let's apply some ES6 magic here
 		section.insertAdjacentHTML('beforeend', JSON.parse(this.response).map(template).join(''));
 
-		// Lastly, we'll add a link to the comment section on the commit on GitHub so people know where to post
+		// Lastly, we'll add a link to the commit on GitHub so people know where to add comments
 		section.insertAdjacentHTML('beforeend', `
 			<div class='gfm'>
 				<a href='https://github.com/${nwo}/commit/${sha}#comments'>Leave a comment on GitHub</a>
