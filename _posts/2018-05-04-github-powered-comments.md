@@ -156,6 +156,7 @@ This is just the essence of it. In addition to the above code, I've added (relat
 I've also added error handling, and some stylesheets to make it look pretty.
 
 Here's links to the relevant files in all their glory:  
+<https://github.com/p3lim/p3lim.github.io/blob/master/_layouts/post.html>  
 <https://github.com/p3lim/p3lim.github.io/blob/master/assets/js/comments.js>  
 <https://github.com/p3lim/p3lim.github.io/blob/master/assets/css/style.scss> (see the #comments section)  
 <https://github.com/p3lim/p3lim.github.io/blob/master/assets/css/gfm.min.css> (don't recall the source)
