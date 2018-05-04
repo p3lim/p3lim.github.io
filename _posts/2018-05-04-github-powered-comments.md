@@ -35,7 +35,7 @@ Simple enough, an `article` element that contains a `header` with the title of t
 
 Here we'll want to add the metadata from Jekyll, so we can reach it with JavaScript later. Just edit the first line like so:
 ```html
-<article data-nwo='{{ site.github.repository_nwo }}' data-sha='{{ page.sha }}'>
+<article data-nwo='{{ "{{ site.github.repository_nwo " }}}}' data-sha='{{ "{{ page.sha " }}}}'>
 ```
 `site.github.repository_nwo` is basically `username/repository` for the website repository on GitHub, in my example it's `p3lim/p3lim.github.io`. `page.sha` is custom frontmatter we place in the top of the posts we want to enable comments on, which represents the commit for the post, added like so:
 ```
