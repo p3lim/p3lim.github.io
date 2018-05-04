@@ -82,7 +82,7 @@ xhr.send();
 
 With that we've queried the [API for the commit comments](https://developer.github.com/v3/repos/comments/#list-comments-for-a-single-commit), ready to parse. Let's expand on the handling:
 
-```
+```javascript
 let handleComments = function(){
 	// We'll have to make sure that the request responded successfully, so let's check for the return status
 	if (this.status === 200){
