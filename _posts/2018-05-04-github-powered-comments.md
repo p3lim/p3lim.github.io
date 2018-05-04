@@ -6,7 +6,7 @@ sha: 43eca2893479069b5f561af9847061a42d396342
 ---
 
 I'm a big fan of [GitHub Pages](https://pages.github.com/), which this website runs on. So far I haven't done much with it, but I figured I'd mess about and get a comment section for it, just in case :)  
-Adding a comments section leaves me with a few options, but I figured I'd try to be a bit creative.
+Adding a comments section leaves me with quite a few options, but I figured I'd try to be a bit creative.
 
 Posts on a GitHub Pages website is done through markdown files pushed to a Git repository, which means it will have an accompanying commit page on GitHub (like [this one](https://github.com/p3lim/p3lim.github.io/commit/43eca2893479069b5f561af9847061a42d396342) for this very post you're reading).  
 GitHub also has a nice feature that allows users to comment on pretty much anything they'd like, e.g. lines in code, issues, pull requests, _and even commits!_  
@@ -14,8 +14,8 @@ An added bonus is that there are moderating capabilities, and even full Markdown
 
 And adding to this, they expose a bit of [repository metadata](https://help.github.com/articles/repository-metadata-on-github-pages/) to [Jekyll](https://jekyllrb.com/), which means that we could easily get enough data through the markup directly without any modifications to the website code (just adding a script and some stylesheets), query the [GitHub API](https://developer.github.com/v3/), and we'd be able to present the comments on the commit as the comments section on a post.
 
-Now, we _could_ get all the data to kind of guess which commit relates to the current post using the API, but there's [rate limiting](https://developer.github.com/v3/#rate-limiting), and it's much slower to do so.  
-The alternative is adding a single piece of [front matter](https://jekyllrb.com/docs/frontmatter/) to the post, specifically the commit sha for the commit of the post, and then use that instead as the commit sha is unique within a repository.
+Now, we _could_ get all the data to kind of guess which commit relates to the current post using the API, but there's [rate limiting](https://developer.github.com/v3/#rate-limiting), and it's much slower to do so due to the "guessing" part (multiple queries).  
+The alternative is adding a single piece of [front matter](https://jekyllrb.com/docs/frontmatter/) to the post, specifically the commit sha for the commit of the post, and then use that instead since the commit sha is unique within a repository.
 
 ### Implementation
 
@@ -46,7 +46,7 @@ sha: {{ page.sha }}
 ---
 ```
 
-_The main downside of this is that you'll need to commit the post, then edit it again just to add the frontmatter to it for the `sha` reference._
+_The main downside of this is that you'll need to commit the post, then edit it again just to add the frontmatter to it for the `sha` reference. This could easily be automated however._
 
 Lastly, since we'll be using JavaScript for this, we'll create that file and load it at the end of the `post` layout file, like so:
 
@@ -93,7 +93,7 @@ let handleComments = function(){
 };
 ```
 
-Web request, such amaze. Let's handle the successful scenario first:
+Web request, such amaze. Let's handle the successful scenario:
 
 ```javascript
 let handleComments = function(){
@@ -117,7 +117,9 @@ let handleComments = function(){
 }
 ```
 
-_Most_ of that should be rather self-explanatory, but in essence we're just adding elements to a `section`-element at the bottom of the article. The most obfuscated line in there is the line that parses the comments. What it does is the following: it parses the response from the web request, as it's a JSON string, which it then maps all the comments using a function named `template` that we haven't defined yet. The mapping will return an array, so we join that array into a single string, which we then append to the end of the comments section.
+_Most_ of that should be rather self-explanatory, but in essence we're just adding elements to a `section`-element at the bottom of the article. The most obfuscated line in there is the line that parses the comments.
+
+What it does is the following: it parses the response from the web request - JSON data containing info for the comments , which it then iterates over through mapping, using a function named `template` that we haven't defined yet. The mapping will return an array, so we join that array into a single string, which we then append to the end of the comments section.
 
 Let's create the `template` function:
 
