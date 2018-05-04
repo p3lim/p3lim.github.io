@@ -8,7 +8,7 @@ sha: 43eca2893479069b5f561af9847061a42d396342
 I'm a big fan of [GitHub Pages](https://pages.github.com/), which this website runs on. So far I haven't done much with it, but I figured I'd mess about and get a comment section for it, just in case :)  
 Adding a comments section leaves me with a few options, but I figured I'd try to be a bit creative.
 
-Posts on a GitHub Pages website is done through markdown files pushed to a Git repository, which means it will have an accompanying commit page on GitHub (like [this one]() for this very post you're reading).  
+Posts on a GitHub Pages website is done through markdown files pushed to a Git repository, which means it will have an accompanying commit page on GitHub (like [this one](https://github.com/p3lim/p3lim.github.io/commit/43eca2893479069b5f561af9847061a42d396342) for this very post you're reading).  
 GitHub also has a nice feature that allows users to comment on pretty much anything they'd like, e.g. lines in code, issues, pull requests, _and even commits!_  
 An added bonus is that there are moderating capabilities, and even full Markdown support, which is just icing on the cake!
 
