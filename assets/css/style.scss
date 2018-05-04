@@ -104,6 +104,15 @@ article {
 		margin: 8px 0 0 30px;
 	}
 
+	p + ul {
+		margin-top: -20px;
+	}
+
+	li > ul {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
 	li {
 		margin-bottom: 0;
 	}
