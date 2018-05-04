@@ -155,10 +155,12 @@ Aaaaand... we're done! Well, pretty much.
 This is just the essence of it. In addition to the above code, I've added (relative) timestamps using the [Moment.js](https://momentjs.com/) library, as well parsed the comment body using [Marked.js](https://marked.js.org/) (which supports GitHub Flavored Markdown!).  
 I've also added error handling, and some stylesheets to make it look pretty.
 
-Here's links to the relevant files in all their glory:  
-<https://github.com/p3lim/p3lim.github.io/blob/master/_layouts/post.html>  
-<https://github.com/p3lim/p3lim.github.io/blob/master/assets/js/comments.js>  
-<https://github.com/p3lim/p3lim.github.io/blob/master/assets/css/style.scss> (see the #comments section)  
-<https://github.com/p3lim/p3lim.github.io/blob/master/assets/css/gfm.min.css> (don't recall the source)
+Here's links to the relevant files in all their glory:
+- [\_layouts/post.html](https://github.com/p3lim/p3lim.github.io/blob/master/_layouts/post.html)
+- [assets/js/comments.js](https://github.com/p3lim/p3lim.github.io/blob/master/assets/js/comments.js)
+- [assets/css/style.scss](https://github.com/p3lim/p3lim.github.io/blob/master/assets/css/style.scss)
+	- see the `#comments` section
+- [assets/css/gfm.min.css](https://github.com/p3lim/p3lim.github.io/blob/master/assets/css/gfm.min.css)
+	- honestly don't know where I found this, would like to provide credit/source
 
 This post has comments enabled using the final code, feel free to test it out and let me know what you think.
