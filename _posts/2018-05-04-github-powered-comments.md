@@ -51,9 +51,9 @@ _The main downside of this is that you'll need to commit the post, then edit it 
 Lastly, since we'll be using JavaScript for this, we'll create that file and load it at the end of the `post` layout file, like so:
 
 ```html
-{% if page.sha %}
+{{ "{% if page.sha " }}%}
 <script src='/assets/js/comments.js' async></script>
-{% endif %}
+{{ "{% endif " }}%}
 ```
 
 Being extra fancy here, we only load the JavaScript file _if_ we've added the sha to the frontmatter, which makes the comments opt-in for every post!
