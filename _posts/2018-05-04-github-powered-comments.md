@@ -2,6 +2,7 @@
 layout: post
 title: GitHub Powered Comments
 tags: javascript
+sha: 43eca2893479069b5f561af9847061a42d396342
 ---
 
 I'm a big fan of [GitHub Pages](https://pages.github.com/), which this website runs on. So far I haven't done much with it, but I figured I'd mess about and get a comment section for it, just in case :)  
@@ -41,7 +42,7 @@ Here we'll want to add the metadata from Jekyll, so we can reach it with JavaScr
 ---
 layout: post
 title: GitHub Powered Comments
-sha: 
+sha: 43eca2893479069b5f561af9847061a42d396342
 ---
 ```
 
