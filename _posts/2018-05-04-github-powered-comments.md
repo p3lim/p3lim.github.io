@@ -139,7 +139,7 @@ let template = data => {
 			<div class='comment'>
 				<div class='header'>
 					<h3>
-						<a href='${data.user.html_url'>${data.user.login}</a>
+						<a href='${data.user.html_url}'>${data.user.login}</a>
 					</h3>
 				</div>
 				<div class='body'>
