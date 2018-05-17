@@ -10,6 +10,12 @@ layout: base
 	<section>
 		{{ content }}
 	</section>
+	{% if page.sha %}
+		<section id='comments'>
+			<hr>
+			<span>Please enable JavaScript to view the <a href='/2018/05/04/github-powered-comments'>comments powered by GitHub.</a></span>
+		</section>
+	{% endif %}
 </article>
 
 <script src='/assets/js/anchor.min.js'></script>

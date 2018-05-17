@@ -45,11 +45,11 @@ let template = comment => {
 	`;
 };
 
-// append new comments section to article
-article.insertAdjacentHTML('beforeend', '<section id="comments"><hr></section>');
-
 // query for the comments section
 let section = document.querySelector('article #comments');
+
+// remove temp text
+section.removeChild(section.lastChild);
 
 // request comments for article from GitHub
 get(`https://api.github.com/repos/${nwo}/commits/${sha}/comments`)
