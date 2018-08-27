@@ -115,7 +115,7 @@ EndPoint   = vpn.example.com:51820
 The interface `Address` is `10.0.0.2`, as this will be the laptop's address on the virtual network on the server.  
 The interface `PrivateKey` is what we generated into `/etc/wireguard/keys/laptop`.  
 The peer `PublicKey` is what we generated on the server in `/etc/wireguard/keys/server.pub`.  
-The peer `AllowedIPs` just says that we'll accept any traffic coming from the VPN server, both IPv4 and IPv6 traffic (comma-separated).  
+The peer `AllowedIPs` just says that we'll accept any traffic coming from the VPN server, both IPv4 and IPv6 traffic.  
 The peer `Endpoint` is the public-facing address for the server, which could just as well be an IP address if you don't have a domain for it.
 
 We also need to whitelist the laptop on the server, so let's add to the `/etc/wireguard/wg0.conf` there:
@@ -205,7 +205,7 @@ You can now see all peers by running `wg` on the server.
 Instead of having to modify the file for every client you want to add to the server you could also use the `wg` tool instead:
 ```bash
 # add peer
-wg set wg0 peer <client_pubkey> allowed-ips 10.0.0.x/24
+wg set wg0 peer <client_pubkey> allowed-ips 10.0.0.x/32
 
 # verify connection
 wg
