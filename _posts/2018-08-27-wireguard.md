@@ -30,11 +30,11 @@ I will be doing this on my server running Debian, but WireGuard supports most (i
 Following the steps on the [official installation page](https://www.wireguard.com/install/), I added the sources and preferences and installed WireGuard like so:
 
 ```bash
-sudo apt install wireguard
+apt install wireguard
 ```
 One thing that the installation page doesn't mention is that we'll also need the linux headers to create new links, so install that too:
 ```bash
-sudo apt install linux-headers-$(uname -r)
+apt install linux-headers-$(uname -r)
 ```
 
 ### Configuring
