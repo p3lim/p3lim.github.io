@@ -154,17 +154,17 @@ First we'll need to install the preview of the WireGuard client, found on Google
 
 Open up the app, and you'll be presented with a blank slate. Hit the "+" button in the bottom-right and select "Create from scratch".
 
-![[Click to zoom](https://user-images.githubusercontent.com/26496/44641418-24747c80-a9c7-11e8-8b73-76de050d01d5.png)](https://user-images.githubusercontent.com/26496/44641423-29393080-a9c7-11e8-8fc6-223abc5721d8.png)
+![](https://user-images.githubusercontent.com/26496/44641423-29393080-a9c7-11e8-8fc6-223abc5721d8.png)
 
 Choose any name you want, hit the "Generate" button on the right side, and fill in the "Addresses" field.  
 Again, we're using the `10.0.0.x/24` format, this time the last number is `3`.  
 Lastly, add some DNS servers, I like to use [1.1.1.1](https://1.1.1.1/), but you can pick any you want (comma-separated).  
 
-![[Click to zoom](https://user-images.githubusercontent.com/26496/44641424-2b9b8a80-a9c7-11e8-93de-67030a77341a.png)](https://user-images.githubusercontent.com/26496/44641428-2dfde480-a9c7-11e8-8d38-c0dfa9d5d0d4.png)
+![](https://user-images.githubusercontent.com/26496/44641428-2dfde480-a9c7-11e8-8d38-c0dfa9d5d0d4.png)
 
 Hit the big "Add Peer" button and fill in the fields for the server like we did for the laptop.
 
-![[Click to zoom](https://user-images.githubusercontent.com/26496/44641430-2f2f1180-a9c7-11e8-8b64-8fccbc59be7f.png)](https://user-images.githubusercontent.com/26496/44641432-30f8d500-a9c7-11e8-84e2-edbb7679b01e.png)
+![](https://user-images.githubusercontent.com/26496/44641432-30f8d500-a9c7-11e8-84e2-edbb7679b01e.png)
 
 That's pretty much it for the phone setup, just hit the save button in the top-right to finish.  
 We'll need the "Public key" from the phone, I suggest using some form for copy-pasting it since it's a bit tedious to type out manually.
