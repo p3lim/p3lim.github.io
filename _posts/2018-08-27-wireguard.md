@@ -194,7 +194,7 @@ wg-quick up wg0
 
 Finally, just flip the switch in the app and you should be connected!
 
-You can now see all peers by running `sudo wg` on the server.
+You can now see all peers by running `wg` on the server.
 
 ### Persistency
 
