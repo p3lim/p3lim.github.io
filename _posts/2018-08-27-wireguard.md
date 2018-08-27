@@ -18,8 +18,8 @@ If you want to know more about the project, read the [whitepaper](https://www.wi
 
 With the warnings out of the way, I wanted to test this out on my environment consisting of the following:
 
-- Server running Debian 9.5
-- Laptop running Arch Linux
+- Server running Debian 9.5 (w/networkd)
+- Laptop running Arch Linux (w/networkd)
 - Phone running Android 8.1
 
 The server will act as the VPN host, with the laptop and phone as clients connecting into its virtual network.
@@ -69,9 +69,10 @@ The `Address` field signifies the _virtual_ network that the server will be on, 
 The `PrivateKey` is the key we generated earlier, copy-pasted from `/etc/wireguard/keys/server`.  
 The `ListenPort` is the external port we're accepting traffic on, this **needs** to be opened on your firewall/router!
 
-Now we just have to start it, which is super simple:
+Now we just have to start it, which we'll use systemd for to also add persistency:
 ```bash
-wg-quick up wg0 # wg0 must match the configuration file; wg0.conf
+systemctl enable wp-quick@wg0.service --now
+# wg0 must match the configuration file; wg0.conf
 ```
 
 That's it, now you have your WireGuard server up and running!  
@@ -132,15 +133,19 @@ The only thing we changed here was adding the "peer" for the laptop,
 `PublicKey` being the key we made on the laptop in `/etc/wireguard/keys/laptop.pub`,  
 `AllowedIPs` is a whitelist of the laptop's `Address` field, with a CIDR of `/32` to only allow 1 IP.
 
-Lastly, on the server we'll need to "restart" the tunnel:
+Lastly, on the server we'll need to restart the tunnel:
 ```bash
-wg-quick down wg0
-wg-quick up wg0
+systemctl restart wp-quick@wg0.service
 ```
 
-And on the laptop we just need to start it:
+And on the laptop we just need to start it, same as we did on the server:
 ```bash
-wg-quick up wg0
+systemctl enable wp-quick@wg0.service --now
+```
+
+I also suggest enabling this networkd service to make sure the network is up:
+```bash
+systemctl enable systemd-networkd-wait-online.service
 ```
 
 ### Connecting the phone
@@ -186,20 +191,27 @@ PublicKey  = lXjYOk+11EB6JrRyw0z/3dVewvfoCuvdC6XwQALQKXM=
 AllowedIPs = 10.0.0.3/32
 ```
 The only thing to change is adding the 2nd peer, for the phone.  
-And like before, we'll need to "restart" the tunnel on the server:
+And like before, we'll need to restart the tunnel on the server:
 ```bash
-wg-quick down wg0
-wg-quick up wg0
+systemctl restart wp-quick@wg0.service
 ```
 
 Finally, just flip the switch in the app and you should be connected!
 
 You can now see all peers by running `wg` on the server.
 
-### Persistency
+### Tedious to add new clients?
 
-If you're happy with how the VPN works, I'd advice enabling it on boot, which with systemd can be done like so:
+Instead of having to modify the file for every client you want to add to the server you could also use the `wg` tool instead:
 ```bash
-systemctl enable wg-quick@wg0.service
-systemctl enable systemd-networkd-wait-online.service
+# add peer
+wg set wg0 peer <client_pubkey> allowed-ips 10.0.0.x/24
+
+# verify connection
+wg
+
+# save to config
+wg-quick save wg0
 ```
+
+That last line can be omitted if you add `SaveConfig = true` under the `[Interface]` on the server's config.
