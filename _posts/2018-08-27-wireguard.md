@@ -2,6 +2,7 @@
 layout: post
 title: Setting up a WireGuard VPN Server
 tags: vpn server
+sha: 84ec449474256ecd6a57f03255ac35239c553524
 ---
 
 I've been using [OpenVPN](https://openvpn.net/) for a while on my home server just to keep my portable devices safe while roaming, but I've never 
