@@ -8,7 +8,8 @@ sha: 84ec449474256ecd6a57f03255ac35239c553524
 I've been using [OpenVPN](https://openvpn.net/) for a while on my home server just to keep my portable devices safe while roaming, but I've never 
 quite liked its unstable nature, slow reconnection speeds and hosts of options making it harder to keep up with in terms of best practices.
 
-I recently found out about [WireGuard](https://www.wireguard.com/), and was intrigued considering the [praise it got](http://lkml.iu.edu/hypermail/linux/kernel/1808.0/02472.html) from none other than [Linus Torvalds](https://twitter.com/linus__torvalds)!  
+I recently found out about [WireGuard](https://www.wireguard.com/), and was intrigued considering the [praise it got](http://lkml.iu.edu/hypermail/linux/kernel/1808.0/02472.html) from none other than [Linus Torvalds](https://twitter.com/linus__torvalds)!
+
 It boasts simple configuration, strong encryption, great performance and a codebase so small it can be audited in under a day. It's created by Jason A. Donenfeld, also known as [ZX2C4](https://www.zx2c4.com/), author of popular open source projects such as [pass](https://www.passwordstore.org/) and [cgit](https://git.zx2c4.com/cgit/about/).
 
 Now, this is mostly for evaluation purposes, the project is still quite young and is considered a [work in progress](https://www.wireguard.com/#work-in-progress), so please make sure you know what you're getting yourself into.
@@ -195,9 +196,9 @@ Finally, just flip the switch in the app and you should be connected!
 
 You can now see all peers by running `sudo wg` on the server.
 
-### Persistent
+### Persistency
 
-If you're happy with how the VPN works, I'd advice enabling on boot, which with systemd can be done like so:
+If you're happy with how the VPN works, I'd advice enabling it on boot, which with systemd can be done like so:
 ```bash
 systemctl enable wg-quick@wg0.service
 systemctl enable systemd-networkd-wait-online.service
