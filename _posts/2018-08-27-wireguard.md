@@ -71,7 +71,7 @@ The `ListenPort` is the external port we're accepting traffic on, this **needs**
 
 Now we just have to start it, which we'll use systemd for to also add persistency:
 ```bash
-systemctl enable wp-quick@wg0.service --now
+systemctl enable wg-quick@wg0.service --now
 # wg0 must match the configuration file; wg0.conf
 ```
 
@@ -135,12 +135,12 @@ The only thing we changed here was adding the "peer" for the laptop,
 
 Lastly, on the server we'll need to restart the tunnel:
 ```bash
-systemctl restart wp-quick@wg0.service
+systemctl restart wg-quick@wg0.service
 ```
 
 And on the laptop we just need to start it, same as we did on the server:
 ```bash
-systemctl enable wp-quick@wg0.service --now
+systemctl enable wg-quick@wg0.service --now
 ```
 
 I also suggest enabling this networkd service to make sure the network is up:
@@ -193,7 +193,7 @@ AllowedIPs = 10.0.0.3/32
 The only thing to change is adding the 2nd peer, for the phone.  
 And like before, we'll need to restart the tunnel on the server:
 ```bash
-systemctl restart wp-quick@wg0.service
+systemctl restart wg-quick@wg0.service
 ```
 
 Finally, just flip the switch in the app and you should be connected!
