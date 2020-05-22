@@ -2,6 +2,7 @@
 layout: post
 title: Proxmox VE with custom ACME providers
 tags: proxmox,linux,acme
+sha: 7f5559f4d88c023aaf4651b7bb40416362942eb1
 ---
 
 Proxmox VE has built-in support for requesting and renewing certificates from an ACME endpoint. It is designed to be used with Let's Encrypt, and as such it doesn't support adding new endpoints in the GUI, so we'll have to use the Proxmox CLI toolchain for that. Although everything else can be done in the GUI, we'll be doing it in the terminal as well, since it's a good idea to learn some of the commands.
