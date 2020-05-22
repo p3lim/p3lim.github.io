@@ -2,6 +2,7 @@
 layout: post
 title: Unifi Controller on a Raspberry Pi
 tags: raspi,linux,network,unifi
+sha: 1ea426adeee70fa59ac06b17e5b64a562a69613b
 ---
 
 I wanted to repurpose my old Raspberry Pi 2 into something useful, as its age is showing and can't be used for anything complicated these days. One of the things it can do just fine is manage a small home or office Ubiquiti-based network.
