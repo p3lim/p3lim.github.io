@@ -2,6 +2,7 @@
 layout: post
 title: Kubernetes Control Plane Load Balancer
 tags: kubernetes,linux,network
+sha: b58d3226b9272444429ced4915d688e95cbd3112
 ---
 
 In a cloud environment you'd typically have a proper load balancer in front of your Kubernetes cluster, such as Amazon ELB. In a bare-metal environment you don't have this luxury, but setting up your own is rather easy.
