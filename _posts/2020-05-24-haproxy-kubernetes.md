@@ -21,35 +21,45 @@ This setup is done on a fresh Fedora 32 VM, with access to the following Kuberne
 
 Install HAProxy:
 
-	dnf install -y haproxy
+{% highlight bash %}
+dnf install -y haproxy
+{% endhighlight %}
 
 Make sure HAProxy can bind to any address and port:
 
-	setsebool -P haproxy_connect_any 1
+{% highlight bash %}
+setsebool -P haproxy_connect_any 1
+{% endhighlight %}
 
 Configure HAProxy to round-robin to these hosts, with health checks:
 
-	cat <<EOF >/etc/haproxy/haproxy.cfg
-	frontend kubernetes-api
-		mode tcp
-		bind *:6443
-		default_backend kubernetes-control-plane
+{% highlight bash %}
+cat <<EOF >/etc/haproxy/haproxy.cfg
+frontend kubernetes-api
+	mode tcp
+	bind *:6443
+	default_backend kubernetes-control-plane
 
-	backend kubernetes-control-plane
-		mode    tcp
-		balance roundrobin
-		server  kube01 10.0.0.11:6443 check
-		server  kube02 10.0.0.12:6443 check
-		server  kube03 10.0.0.13:6443 check
-	EOF
+backend kubernetes-control-plane
+	mode    tcp
+	balance roundrobin
+	server  kube01 10.0.0.11:6443 check
+	server  kube02 10.0.0.12:6443 check
+	server  kube03 10.0.0.13:6443 check
+EOF
+{% endhighlight %}
 
 Open up the port in the firewall:
 
-	firewall-cmd --add-port=6443/tcp --permanent
-	firewall-cmd --reload
+{% highlight bash %}
+firewall-cmd --add-port=6443/tcp --permanent
+firewall-cmd --reload
+{% endhighlight %}
 
 Then enable the HAProxy service:
 
-	systemctl enable --now haproxy
+{% highlight bash %}
+systemctl enable --now haproxy
+{% endhighlight %}
 
 And that's it, you're now load balancing the Kubernetes control plane.
