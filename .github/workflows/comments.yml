@@ -9,5 +9,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "Enable comments on $GITHUB_SHA"
+          git commit -m "Enable comments on $GITHUB_SHA" || exit 0
           git push
