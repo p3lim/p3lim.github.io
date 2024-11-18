@@ -5,6 +5,13 @@ body {
 	margin: 0 auto;
 	max-width: 800px;
 
+	// override font from milligram, it's a bit unreadable
+	font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+	font-size: 1.8rem;
+	font-weight: 400;
+	letter-spacing: normal;
+	text-color: #3f484f;
+
 	&[data-path='/'] {
 		max-width: 600px;
 
