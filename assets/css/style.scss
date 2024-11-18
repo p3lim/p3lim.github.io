@@ -70,15 +70,16 @@ body {
 			margin-left: 20px;
 		}
 
-		& > div > a > svg:hover {
-			opacity: 100%;
-		}
-
 		& > div > a > svg {
 			display: inline-block;
 			width: 21px;
 			height: 21px;
-			opacity: 70%;
+			opacity: 0.6;
+			transition: opacity 0.5s;
+
+			&:hover {
+				opacity: 1;
+			}
 		}
 	}
 }
