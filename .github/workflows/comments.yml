@@ -3,7 +3,7 @@ jobs:
   comments:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: |
           find _posts -type f -exec sed -i "s/^comments: true$/sha: $GITHUB_SHA/" {} \;
           git config user.name github-actions
