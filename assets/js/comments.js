@@ -38,7 +38,7 @@ let template = comment => {
 					</h3>
 				</div>
 				<div class='body gfm'>
-					${marked(comment.body, {gfm: true})}
+					${marked.parse(comment.body)}
 				</div>
 			</div>
 		</div>
@@ -62,5 +62,6 @@ get(`https://api.github.com/repos/${nwo}/commits/${sha}/comments`)
 	})
 	.catch(error => {
 		// append error message to comment section
+		console.log('Comment fetch error:', error)
 		section.insertAdjacentHTML('beforeend', '<div class="gfm"><p>Failed to fetch comments :(</p></div>');
 	});
