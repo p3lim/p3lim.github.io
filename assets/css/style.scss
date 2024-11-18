@@ -60,6 +60,27 @@ body {
 	&[data-path='/404'] {
 		max-width: 500px;
 	}
+
+	& > header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		& > div > a:not(:first-child) {
+			margin-left: 20px;
+		}
+
+		& > div > a > svg:hover {
+			opacity: 100%;
+		}
+
+		& > div > a > svg {
+			display: inline-block;
+			width: 21px;
+			height: 21px;
+			opacity: 70%;
+		}
+	}
 }
 
 header {
